@@ -376,6 +376,8 @@ Rails.application.routes.draw do
     resources :dashboard, controller: :dashboard, only: %i[index show], path: "/", param: :school_id
 
     scope "/:school_id" do
+      get "/:cohort", to: "multiple_cohorts/dashboard#show"
+
       resource :year_2020, path: "year-2020", controller: "year2020", only: [] do
         get "support-materials-for-NQTs", action: :start, as: :start
 
