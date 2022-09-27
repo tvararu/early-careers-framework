@@ -2,7 +2,7 @@
 <% content_for :before_content, govuk_back_link(text: "Back", href: :back) %>
 
 <% unless @participant_profile.npq? %>
-  <span class="govuk-caption-l"><%= @latest_induction_record&.user&.user_description %></span>
+  <span class="govuk-caption-l"><%= @participant_profile.role %></span>
 <% end %>
 <h1 class="govuk-heading-xl">
   <%= @participant_profile.user.full_name %>
